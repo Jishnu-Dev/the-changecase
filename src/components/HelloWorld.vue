@@ -42,8 +42,12 @@
           <div>
           </div>
           <div class="button-block">
-            <button type="button" class="btn btn-outline-dark buttons" @click="upperCase()"> UPPERCASE </button>
-            <button type="button" class="btn btn-outline-dark buttons" @click="lowerCase()"> lowercase </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="upperCase()"> UPPER CASE </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="lowerCase()"> lower case </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="titleCase()"> Title Case </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="capitalize()"> Capitalize </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="snakeCase()"> snake_case </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="kebabCase()"> kebab-case </button>
           </div>
           <div id="footer">
           <p>
@@ -54,7 +58,7 @@
           </p>
           <p>
             <small>
-              Intro illustration from <a href="https://storyset.com" target="_blank">StorySet ❤️</a>
+              Intro illustration from <a href="https://storyset.com" target="_blank">StorySet ❤️</a>  by <a href="https://github.com/Jishnu-Dev" target="_blank">Jishnu Raj ✔️</a>
             </small>
           </p>
           </div>
@@ -65,6 +69,7 @@
 </template>
 
 <script>
+var v = require('voca');
 
 export default {
   name: 'HelloWorld',
@@ -80,12 +85,28 @@ export default {
     }
   },
   methods: {
-    upperCase () {
+    upperCase() {
       var userOutput = this.userInput.toUpperCase()
       document.getElementById('user-output').value = userOutput
     },
-    lowerCase () {
+    lowerCase() {
       var userOutput = this.userInput.toLowerCase()
+      document.getElementById('user-output').value = userOutput
+    },
+    titleCase() {
+      var userOutput = v.titleCase(this.userInput)
+      document.getElementById('user-output').value = userOutput
+    },
+    capitalize() {
+      var userOutput = v.capitalize(this.userInput)
+      document.getElementById('user-output').value = userOutput
+    },
+    snakeCase(){
+      var userOutput = v.snakeCase(this.userInput)
+      document.getElementById('user-output').value = userOutput
+    },
+    kebabCase(){
+      var userOutput = v.kebabCase(this.userInput)
       document.getElementById('user-output').value = userOutput
     },
     copyText () {
@@ -114,15 +135,16 @@ export default {
   }
 }
 .button-block > button {
-  width: 124.65px !important;
+  width: 130.65px !important;
   margin-right: 1rem;
+  margin-bottom: 1rem;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .button-block > button {
     margin-bottom: 1rem;
   }
-}
+} */
 #footer {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 </style>

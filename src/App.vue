@@ -1,6 +1,7 @@
 <template>
 
-<nav class="navbar navbar-expand-md navbar-light bg-none">
+<!-- Hide navbar for now -->
+<!-- <nav class="navbar navbar-expand-md navbar-light bg-none">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">ChangeCase</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +32,7 @@
       </span>
     </div>
   </div>
-</nav>
+</nav> -->
 
   <img class="intro-img" alt="Vue logo" src="./assets/animated-intro.svg">
   <HelloWorld msg="The Changecase By Jishnu Raj"/>
@@ -55,6 +56,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 40px;
 }
 .intro-img {
   width: 25vw !important;

@@ -80,12 +80,23 @@ export default {
 
 <style scoped>
 .page-content {
-  margin-right: 10vw !important;
-  margin-left: 10vw !important;
+  margin-right: 14vw !important;
+  margin-left: 14vw !important;
+}
+@media (max-width: 992px) { 
+  .page-content {
+    margin-right: 2vw !important;
+    margin-left: 2vw !important;
+}
 }
 .button-block > button {
   width: 124.65px !important;
   margin-right: 1rem;
+}
+@media (max-width: 768px) {
+  .button-block > button {
+    margin-bottom: 1rem;
+}
 }
 #footer {
   margin-top: 90px;

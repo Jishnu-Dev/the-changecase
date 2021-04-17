@@ -65,11 +65,15 @@
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
+    components: {
+    
+    },
   data() {
     return {
       welcomeMessage: 'ChangeCase by Jishnu Raj'
@@ -87,7 +91,7 @@ export default {
   .page-content {
     margin-right: 2vw !important;
     margin-left: 2vw !important;
-}
+  }
 }
 .button-block > button {
   width: 124.65px !important;
@@ -96,7 +100,7 @@ export default {
 @media (max-width: 768px) {
   .button-block > button {
     margin-bottom: 1rem;
-}
+  }
 }
 #footer {
   margin-top: 90px;

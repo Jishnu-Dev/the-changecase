@@ -1,18 +1,66 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h3>Installing BOOTSTRAP</h3>
-   <button type="button" class="btn btn-primary">Primary</button>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
+  <div class="container">
+    <div class="page-content">
+      <div class="row">
+        <div class="col">
+          <h1 id="title" class="mb-0">{{ welcomeMessage }}</h1>
+          <p>Convert text between different cases</p>
+          <div class="d-flex flex-column align-items-center">
+            <div class="input-group input-box mb-3">
+              <input
+                id="user-input"
+                type="text"
+                v-model="userInput"
+                class="form-control"
+                placeholder="Enter text to convert"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+              <button
+                class="btn btn-dark"
+                type="button"
+                onclick="document.getElementById('user-input').value = ''; document.getElementById('user-output').value = ''; ">Clear</button>
+            </div>
+            <div class="input-group input-box mb-3">
+              <input
+                id="user-output"
+                type="text"
+                class="form-control"
+                placeholder="Converted text appears here"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon3">
+              <button
+                id="copy-btn"
+                class="btn btn-primary"
+                type="button"
+                @click="copyText(); showAlert();">
+                Copy
+                </button>
+            </div>
+          </div>
+          <div>
+          </div>
+          <div class="button-block">
+            <button type="button" class="btn btn-outline-dark buttons" @click="upperCase()"> UPPERCASE </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="lowerCase()"> lowercase </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="titleCase()"> Title Case </button>
+            <button type="button" class="btn btn-outline-dark buttons" @click="snakeCase()"> snake_case </button>
+          </div>
+          <div id="footer">
+          <p>
+            <small>
+              This tool is a sidehustle project of Jishnu Raj, so it may have its pitfalls of drawbacks.
+              I hope this tool will help you do some basic stuff. Thank you for using my website.
+            </small>
+          </p>
+          <p>
+            <small>
+              Intro illustration from <a href="https://storyset.com" target="_blank">StorySet</a>, With ❤️ By <a href="https://github.com/Jishnu-Dev" target="_blank">Jishnu Raj</a>
+            </small>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,24 +69,25 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      welcomeMessage: 'ChangeCase by Jishnu Raj'
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.page-content {
+  margin-right: 10vw !important;
+  margin-left: 10vw !important;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.button-block > button {
+  width: 124.65px !important;
+  margin-right: 1rem;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+#footer {
+  margin-top: 90px;
 }
 </style>

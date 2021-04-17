@@ -3,8 +3,10 @@
     <div class="page-content">
       <div class="row">
         <div class="col">
-          <h1 id="title" class="mb-0">{{ welcomeMessage }}</h1>
-          <p>Convert text between different cases</p>
+          <div class="mb-3">
+            <h1 id="title" class="mb-0">{{ welcomeMessage }}</h1>
+            <small>Convert text between different cases</small>
+          </div>
           <div class="d-flex flex-column align-items-center">
             <div class="input-group input-box mb-3">
               <input
@@ -42,8 +44,6 @@
           <div class="button-block">
             <button type="button" class="btn btn-outline-dark buttons" @click="upperCase()"> UPPERCASE </button>
             <button type="button" class="btn btn-outline-dark buttons" @click="lowerCase()"> lowercase </button>
-            <button type="button" class="btn btn-outline-dark buttons" @click="titleCase()"> Title Case </button>
-            <button type="button" class="btn btn-outline-dark buttons" @click="snakeCase()"> snake_case </button>
           </div>
           <div id="footer">
           <p>
@@ -54,7 +54,7 @@
           </p>
           <p>
             <small>
-              Intro illustration from <a href="https://storyset.com" target="_blank">StorySet</a>, With ❤️ By <a href="https://github.com/Jishnu-Dev" target="_blank">Jishnu Raj</a>
+              Intro illustration from <a href="https://storyset.com" target="_blank">StorySet ❤️</a>
             </small>
           </p>
           </div>
@@ -72,11 +72,31 @@ export default {
     msg: String
   },
     components: {
-    
     },
   data() {
     return {
-      welcomeMessage: 'ChangeCase by Jishnu Raj'
+      welcomeMessage: 'ChangeCase',
+      userInput: ''
+    }
+  },
+  methods: {
+    upperCase () {
+      var userOutput = this.userInput.toUpperCase()
+      document.getElementById('user-output').value = userOutput
+    },
+    lowerCase () {
+      var userOutput = this.userInput.toLowerCase()
+      document.getElementById('user-output').value = userOutput
+    },
+    copyText () {
+      if (document.getElementById('user-output').value !== '') {
+        var copyText = document.getElementById('user-output')
+        copyText.select()
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand('copy')
+        document.getElementById('copy-btn').innerHTML = 'Copied 👍🏻'
+        setTimeout(() => document.getElementById('copy-btn').innerHTML = 'Copy', 1500)
+      }
     }
   }
 }

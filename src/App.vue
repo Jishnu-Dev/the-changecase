@@ -1,6 +1,6 @@
 <template>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-none">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">ChangeCase</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,14 +26,14 @@
           </ul>
         </li>
       </ul>
-      <span class="navbar-text text-black">
-        <a class="nav-link" href="#">Buy me a coffee ☕</a>
+      <span class="navbar-text">
+        <a class="nav-link" href="#">A project by <a href="https://github.com/Jishnu-Dev" target="_blank">Jishnu Raj ✔️</a></a>
       </span>
     </div>
   </div>
 </nav>
 
-  <img class="intro-img" alt="Vue logo" src="./assets/intro-img.svg">
+  <img class="intro-img" alt="Vue logo" src="./assets/animated-intro.svg">
   <HelloWorld msg="The Changecase By Jishnu Raj"/>
 </template>
 

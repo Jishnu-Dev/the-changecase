@@ -20,7 +20,7 @@
               <button
                 class="btn btn-dark"
                 type="button"
-                onclick="document.getElementById('user-input').value = ''; document.getElementById('user-output').value = ''; ">Clear</button>
+                @click="clearFields()">Clear</button>
             </div>
             <div class="input-group input-box mb-3">
               <input
@@ -29,12 +29,13 @@
                 class="form-control"
                 placeholder="Converted text appears here"
                 aria-label="Recipient's username"
-                aria-describedby="button-addon3">
+                aria-describedby="button-addon3"
+                readonly>
               <button
                 id="copy-btn"
                 class="btn btn-primary"
                 type="button"
-                @click="copyText(); showAlert();">
+                @click="copyText();">
                 Copy
                 </button>
             </div>
@@ -80,7 +81,7 @@ export default {
     },
   data() {
     return {
-      welcomeMessage: 'ChangeCase',
+      welcomeMessage: 'I LOVE PAPPUNNI ❤️',
       userInput: ''
     }
   },
@@ -118,6 +119,11 @@ export default {
         document.getElementById('copy-btn').innerHTML = 'Copied 👍🏻'
         setTimeout(() => document.getElementById('copy-btn').innerHTML = 'Copy', 1500)
       }
+    },
+    clearFields () {
+      document.getElementById('user-input').value = ''
+      document.getElementById('user-output').value = ''
+      this.userInput = null
     }
   }
 }

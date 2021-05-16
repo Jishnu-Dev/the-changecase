@@ -81,7 +81,7 @@ export default {
     },
   data() {
     return {
-      welcomeMessage: 'I LOVE PAPPUNNI ❤️',
+      welcomeMessage: 'ChangeCase By Jishnu Raj',
       userInput: ''
     }
   },
